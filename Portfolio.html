@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="lib/fontawesome/css/font-awesome.css" />
     <link rel="stylesheet" href="lib/hover.css" />
+    <link rel="stylesheet" href="lib/fullPage.js-master/jquery.fullPage.css" />
     <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -20,7 +21,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="#home">
                         <img id="img-logo" alt="Brand" src="images/logo.png">
                         Hugo DEBARD
                     </a>
@@ -28,12 +29,12 @@
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="#page1" class="hvr-underline-from-left">Acceuil <span class="sr-only">(current)</span></a></li>
-                        <li><a class="hvr-underline-from-left" href="#page2">About Me</a></li>
-                        <li><a class="hvr-underline-from-left" href="#page3">Skills</a></li>
-                        <li><a class="hvr-underline-from-left" href="#page4">Works</a></li>
-                        <li><a class="hvr-underline-from-left" href="#page5">Contact Me</a></li>
+                    <ul id="menu" class="nav navbar-nav navbar-right">
+                        <li data-menuanchor="home" class="active"><a href="#home" class="hvr-underline-from-left">Acceuil <span class="sr-only">(current)</span></a></li>
+                        <li data-menuanchor="me"><a class="hvr-underline-from-left" href="#me" id="nav-link-page-1">About Me</a></li>
+                        <li data-menuanchor="skills"><a class="hvr-underline-from-left" href="#skills" id="nav-link-page-2">Skills</a></li>
+                        <li data-menuanchor="works"><a class="hvr-underline-from-left" href="#works" id="nav-link-page-3">Works</a></li>
+                        <li data-menuanchor="contact"><a class="hvr-underline-from-left" href="#contact" id="nav-link-page-4">Contact Me</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -53,52 +54,55 @@
         </nav>
     </header>
 
-    <div id="page1">
-            <video autoplay loop>
+    <div id="fullpage">
+        <div id="page1">
+            <video autoplay loop data-autoplay>
                 <source src="images/video.mp4" type="video/mp4">
             </video>
 
             <!-- fzeze -->
-    </div>
-
-    <div id="page2">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <img src="images/portrait.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-8 col-sm-6">
-                    Lorem ipsum dolorijkioi sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </div>
-            </div>
-        <!-- fzeze -->
         </div>
-    </div>
 
-    <div id="page3">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6">
-                    <!--Sidebar content-->
+        <div id="page2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <img src="images/portrait.jpg" class="img-responsive">
+                    </div>
+                    <div class="col-md-8 col-sm-6">
+                        Lorem ipsum dolorijkioi sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <!--Body content-->
+                <!-- fzeze -->
+            </div>
+        </div>
+
+        <div id="page3">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!--Sidebar content-->
+                    </div>
+                    <div class="col-md-6">
+                        <!--Body content-->
+                    </div>
                 </div>
+                <!-- fzeze -->
             </div>
             <!-- fzeze -->
         </div>
-        <!-- fzeze -->
+
+        <div class="container-fluid" id="page4">
+
+            <!-- fzeze -->
+        </div>
+
+        <div class="container-fluid" id="page5">
+
+            <!-- fzeze -->
+        </div>
     </div>
 
-    <div class="container-fluid" id="page4">
-
-        <!-- fzeze -->
-    </div>
-
-    <div class="container-fluid" id="page5">
-
-        <!-- fzeze -->
-    </div>
 
     <footer>
         <div class="footer" id="pied">
@@ -108,6 +112,7 @@
 
     <script type="application/javascript" src="lib/jquery-3.1.1.min.js"></script>
     <script type="application/javascript" src="lib/bootstrap/js/bootstrap.js"></script>
+    <script type="application/javascript" src="lib/fullPage.js-master/jquery.fullPage.js"></script>
     <script type="application/javascript">
         $(function() {
             $('a[href*="#"]:not([href="#"])').click(function() {
@@ -122,6 +127,16 @@
                     }
                 }
             });
+        });
+
+        $(document).ready(function() {
+            $('#fullpage').fullpage(
+                {
+                    sectionSelector: '[id^=page]',
+                    menu: '#menu',
+                    anchors:['home', 'me', 'skills', 'works', 'contact']
+                }
+            );
         });
     </script>
 </body>

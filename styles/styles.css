@@ -3,14 +3,14 @@
     padding : 0%;
 }
 
-html {
-    height: 500%;
-}
+/*html {*/
+    /*height: 500%;*/
+/*}*/
 
-body
-{
-    height: 100%;
-}
+/*body*/
+/*{*/
+    /*height: 100%;*/
+/*}*/
 
 #global {
 
@@ -20,11 +20,12 @@ div {
     display: block;
 }
 
-[id^=page]
-{
-    overflow: hidden;
-    height: 20%;
-}
+/*[id^=page]*/
+/*{*/
+    /*overflow: hidden;*/
+    /*height: 20%;*/
+    /*padding-top: 50px;*/
+/*}*/
 
 #page1 {
 }
@@ -64,7 +65,9 @@ div {
 }
 
 .nav.navbar-nav li.active a{
-    background-color: #f1c40f;
+    background-color: #f1c40f !important;
+    -webkit-transition: background-color 1.5s ease;
+    transition: background-color 1.5s ease;
 }
 
 video {
