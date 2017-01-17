@@ -1,0 +1,90 @@
+* {
+    margin : 0%;
+    padding : 0%;
+}
+
+html {
+    height: 500%;
+}
+
+body
+{
+    height: 100%;
+}
+
+#global {
+
+}
+
+div {
+    display: block;
+}
+
+[id^=page]
+{
+    overflow: hidden;
+    height: 20%;
+}
+
+#page1 {
+}
+
+#page2 {
+    background-color: yellow;
+}
+
+#page3 {
+    background-color: green;
+}
+
+#page4 {
+    background-color: red;
+}
+
+#page5 {
+    background-color: grey;
+}
+
+#pied {
+    background-color: white;
+    bottom: 0;
+    width: 100%;
+    height: 4%
+}
+
+#img-logo
+{
+    display: inline-block;
+    height: 100%;
+}
+
+.navbar {
+    background-color: white;
+    border-bottom: none;
+}
+
+.nav.navbar-nav li.active a{
+    background-color: #f1c40f;
+}
+
+video {
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.8;
+}
+
+video {
+    object-fit: contain;
+}
+
+[class^=col-]
+{
+    background-color: #2aabd2;
+    min-height: 100px;
+    border: 3px solid rosybrown;
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
